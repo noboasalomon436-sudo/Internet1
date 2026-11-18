@@ -1,8 +1,8 @@
 FROM alpine:latest
 RUN apk add --no-cache curl unzip
-RUN LATEST_URL=$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases/latest | grep "browser_download_url.*linux-64.zip" | cut -d '"' -f 4) && \
-    curl -L -o xray.zip "$LATEST_URL" && \
+RUN curl -fSL -o xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip && \
     unzip xray.zip -d /usr/local/bin/ && \
+    chmod +x /usr/local/bin/xray && \
     rm xray.zip
 
 COPY config.json /etc/xray/config.json
