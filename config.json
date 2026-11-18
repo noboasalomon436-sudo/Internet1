@@ -1,0 +1,19 @@
+{
+  "inbounds": [{
+    "port": 10000,
+    "protocol": "vless",
+    "settings": {
+      "clients": [
+        { "id": "b831381d-6324-4d53-ad4f-8cda48b30811", "level": 0 }
+      ],
+      "decryption": "none"
+    },
+    "streamSettings": {
+      "network": "ws",
+      "wsSettings": {
+        "path": "/nexaria-ray"
+      }
+    }
+  }],
+  "outbounds": [{ "protocol": "freedom" }]
+}
